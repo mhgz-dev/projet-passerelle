@@ -1,0 +1,163 @@
+@font-face {
+    font-family: Changa;
+    src: url("src/fonts/Changa-VariableFont_wght.ttf");
+}
+
+
+:root {
+    --couleurPrincipale: #0A2647;
+    --couleurSecondaire: #144272;
+    --couleurTertiaire: #205295;
+    --couleurQuartenaire: #2C74B3;
+}
+
+/* #393E46 */
+/* #6D9886 */
+/* #F2E7D5 */
+/* F7F7F7 */
+
+/* #30E3CA
+#11999E
+#40514E */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    
+}
+
+html, body {
+    font-family: Changa, Verdana, Tahoma;
+    margin: 0 0;
+    background-color: var(--couleurTertiaire);
+    height: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+header {
+    text-align: center;
+    color: var(--couleurQuartenaire);
+    background-color: var(--couleurPrincipale);
+    text-shadow: 2px 2px var(--couleurSecondaire);
+    /* border: 2px solid black; */
+    
+}
+
+#instructions {
+    background-color: var(--couleurSecondaire);
+    /* border: 3px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+img {
+    width: 30vw;
+    height: 40vh;
+    padding: 15px;
+    
+}
+
+#infos {
+    text-align: center;
+      
+}
+
+#coups {
+    border: 3px solid var(--couleurPrincipale);
+    border-radius: 10px;
+    width: 60%;
+    margin: 50px;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+#lettres {
+    border: 3px solid var(--couleurPrincipale);
+    border-radius: 10px;
+    width: 60%;
+    margin: 50px;
+    padding: 10px;
+    color: whitesmoke;
+    
+}
+/* p {
+    background-color: #F2E7D5;
+    border: 2px solid black;
+} */
+
+#mot_cache {
+    position: relative;
+    text-align: center;
+    letter-spacing: 1em;
+    font-size: 1.8em;
+    color: whitesmoke;
+}
+
+#clavier {
+    display: grid;
+    grid-template-columns: repeat(10, 70px);
+    grid-auto-rows: 70px;
+    row-gap: 20px;
+    column-gap: 20px;
+    margin: 30px;
+}
+
+.touche {
+    border: 2px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--couleurTertiaire);
+}
+
+
+#popup {
+    
+    position: absolute;
+    top: 57%;
+    bottom: 43%;
+    left: 25%;
+    right: 25%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+#gagne {
+    
+    background-color: var(--couleurPrincipale);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.9em;
+    padding: 10px;
+    border-radius: 10px;
+    color: whitesmoke;
+}
+
+#form {
+    text-align: center;
+    padding: 10px;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--couleurPrincipale);
+    color: var(--couleurQuartenaire);
+        
+}
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jeu du Pendu</title>
+</head>
+<body for="reponse">
+
+    
+        <header>
+            <h1>Le Jeu du PENDU</h1>
+            <h3>Saurez-vous trouver le mot ? Sinon c'est la potence :D</h3>
+        </header>
+
+        <section id="instructions">
+            <div id="infos">
+                <div id="coups">
+                    <p>Nombres de coups restants :</br> <span id="coupsRestants">10</span> </p>
+                </div>
+                <div id="lettres">
+                    <p>Lettres déjà utilisées : </br><span id="lettresErreurs"></span></p>
+                </div>            
+            </div>
+
+            
+            <img src="src/img/corde.png" alt="Logo pendu" id="imagesPendu"/>
+                
+        </section>
+
+        <section>
+            
+            <article id="mot_cache">
+            
+            </article>
+
+            <form id="form">
+                <input id="lettresInput" type="text" name="reponse" placeholder="Saisissez une lettre" autofocus maxlength="1"/>
+                <input id="submit" type="submit" value="Ma réponse"/>
+            </form>
+            
+        </section>
+        
+
+        <section id="popup">
+            
+            <article id="gagne">
+                
+                <button type="button" class="rejouez">Rejouez ?</button>
+            </article>
+            
+        </section>
+
+
+        <footer id="footer">
+            <div>Projet dans le cadre de la formation BELIEVEMY.</div> 
+            <div>© Michaël GOUEZ</div>
+        </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
