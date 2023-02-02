@@ -1,10 +1,11 @@
 // VARIABLES
-const motTableau = ['informatique','javascript','clavier','planete','voiture','console','appartement'];
+const motTableau = ['hello', 'ordinateur', 'javascript', 'informatique', 'javascript', 'html', 'bootstrap'];
 let dernierNombreAleatoire;
-let coups           = 10;
+let coups           = 7;
 let images          = 0;
 let lettreUtilisee  = 0;
 let lettreChoisie;
+let motChoisie;
 
 
 // Récupération Event HTML
@@ -64,33 +65,49 @@ const underscores     = document.querySelectorAll('#mot_cache span');
 
 function afficherLettreDansMot(lettreChoisie) {
 
-    let lettreOK = false;
-    
-    for (let i = 0; i < motDecouper.length; i++) {
-        if (lettreChoisie === motDecouper[i]) {
-            underscores[i].textContent = lettreChoisie;
-            lettreUtilisee++;
-            lettreOK = true;
+
+    let lettreOK = false; 
+        
+        for (let i = 0; i < motDecouper.length; i++) {
+            if (lettreChoisie === motDecouper[i]) {
+                underscores[i].textContent = lettreChoisie;
+                lettreUtilisee++;                
+                lettreOK = true;                
+            }
         }
-    }
-    
-    if (!lettreOK) {
-       
-        lettresErreurs.textContent += `${lettreChoisie}, `;
-        afficherPotence();
-        nombresCoupsRestants();      
-    }
 
+        if ( lettreChoisie === motAleatoire ) {
+
+            motCache.innerHTML = lettreChoisie;
+            popup.innerHTML = `Bravo, vous avez gagné !!`;
+            popup.append(rejouez);
+            popup.style.display = 'flex';
+            bloquerInput();
+            lettreOK = true;
+            
+        }
+
+        if (!lettreOK) {
+        
+            lettresErreurs.textContent += `${lettreChoisie}, `;
+            afficherPotence();
+            nombresCoupsRestants();
+
+        }
+
+        if (lettreUtilisee === motDecouper.length) {
+
+            popup.innerHTML = `Bravo, vous avez gagné !!`;
+            popup.append(rejouez);
+            popup.style.display = 'flex';
+            bloquerInput(); 
+
+        }
+}    
 
     
-    if (lettreUtilisee === motDecouper.length) {
-        popup.innerHTML = `Bravo, vous avez gagné !!`;
-        popup.append(rejouez);
-        popup.style.display = 'flex';
-        bloquerInput();    
-    }
     
-}
+   
 
 // Fonction pour le changement d'images de la potence.
 function afficherPotence() {
@@ -100,6 +117,8 @@ function afficherPotence() {
     imagesPendu.setAttribute("src", sourceImages);
  
 }
+
+
 
 // Fonction pour compter les coups restants (Défini dans la variable coups = 10).
 function nombresCoupsRestants() {
@@ -112,11 +131,10 @@ function nombresCoupsRestants() {
         popup.append(rejouez);
         popup.style.display = 'flex';
         bloquerInput();
-        return coups = 10;
+        return coups = 7;
     }
 
 }
-
 
 // Boucle pour activer le bouton Rejouez.
 let rejouez = document.querySelector('.rejouez');
@@ -139,6 +157,7 @@ formulaire.addEventListener('submit', (e) => {
         lettreChoisie = lettresInput.value;
         lettresInput.value = '';
         lettresInput.focus();
+        
         afficherLettreDansMot(lettreChoisie);
         
     }
