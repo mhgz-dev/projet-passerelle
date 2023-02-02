@@ -1,0 +1,15 @@
+Déroulement du jeu du pendu. Fait par moi-même(GOUEZ Michaël).
+
++++++
++ Je suis partie sur une base de 7 erreurs possibles.
++ Les mots sont générés aléatoirement, le thème est l'informatique, il en contient une dizaine.
++ Une fois le mot générés, il est caché sur la page web, ainsi avec le nombre de traits, il indique la taille du mot caché.
++ Il est possible de saisir lettre à lettre, ou alors saisir le mot entièrement.
++ Les mauvaises lettres et/ou mots sont affichés dans un encart, il y en a un autre pour le nombre de coups restants (x/7).
++ Si le mot caché est découvert la partie est gagnée, il y a la possibilité de relancer une partie.
++ Si le mot n'est pas découvert, le bonhomme est pendu et la partie terminée, il y a la possibilité de relancer une partie.
+
++ Concernant les media queries, je suis partie uniquement sur les appareils en dessous de 640 pixels.
+
++ Bonne Partie :D
++++++
