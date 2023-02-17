@@ -1,5 +1,5 @@
 // VARIABLES
-const motTableau = ['hello', 'ordinateur', 'javascript', 'informatique', 'javascript', 'html', 'bootstrap'];
+const motTableau = ['hello', 'informatique', 'javascript', 'bootstrap', 'formation', 'believemy'];
 let dernierNombreAleatoire;
 let coups           = 7;
 let images          = 0;
@@ -58,12 +58,14 @@ function bloquerInput() {
 }
 
 
-// Fonction pour controler les lettres et les afficher
+// Fonction pour controler les lettres / mots et les afficher
 
 const underscores     = document.querySelectorAll('#mot_cache span');
 
 
 function afficherLettreDansMot(lettreChoisie) {
+
+
 
 
     let lettreOK = false; 
@@ -154,9 +156,11 @@ formulaire.addEventListener('submit', (e) => {
         lettresInput.style.backgroundColor = 'red';
     } else {
         lettresInput.style.backgroundColor = 'white';
-        lettreChoisie = lettresInput.value;
+        
+        lettreChoisie = lettresInput.value.toLowerCase();
         lettresInput.value = '';
         lettresInput.focus();
+        
         
         afficherLettreDansMot(lettreChoisie);
         
